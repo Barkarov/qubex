@@ -3,6 +3,7 @@ import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
 import Todo from "./components/Todo";
 import { nanoid } from "nanoid";
+import SubTask from "./components/Subtask";
 
 
 const FILTER_MAP = {
@@ -37,6 +38,7 @@ function App(props) {
               editTask={editTask}
               addSubTask={addNewSubTask}
             />
+            
           ));
 
           const filterList = FILTER_NAMES.map(name => (
@@ -94,7 +96,9 @@ function App(props) {
         const headingText = `${taskList.length} ${tasksNoun} remaining`;  
 
        return (
+      
         <div className="todoapp stack-large">
+          
           <h1>Tasks</h1>
       <Form addTask={addTask}/>
          <div className="filters btn-group stack-exception">
@@ -110,7 +114,7 @@ function App(props) {
       >
         {taskList}
       </ul>
-    
+      
       </div>
   );
 }
